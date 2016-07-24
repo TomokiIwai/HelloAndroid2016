@@ -1,4 +1,4 @@
-package com.tomokey.helloandroid.service;
+package com.tomokey.helloandroid;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,9 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.annimon.stream.Stream;
-import com.tomokey.helloandroid.R;
 import com.tomokey.helloandroid.dto.Message;
 import com.tomokey.helloandroid.dto.MessageSentResult;
+import com.tomokey.helloandroid.service.HelloAndroidService;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
