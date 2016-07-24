@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">HelloAndroid</string>
+
+    <!-- configuration -->
+    <string name="api_host">https://ancient-gorge-25184.herokuapp.com/</string>
+
+    <!-- word -->
+    <string name="start">はじめる</string>
+    <string name="send">送信</string>
+
+    <!-- phrase -->
+    <string name="plz_input_name">名前を入力してください</string>
+    <string name="plz_input_msg">メッセージを入力してください。</string>
+    <string name="notify_sent_msg">メッセージ送信完了</string>
+</resources>
