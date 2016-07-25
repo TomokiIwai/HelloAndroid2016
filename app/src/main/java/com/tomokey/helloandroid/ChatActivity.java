@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -205,13 +206,15 @@ public class ChatActivity extends AppCompatActivity {
                 convertView = mInflater.inflate(R.layout.message_row, parent, false);
             }
 
-            // 名前とメッセージのViewを探す
+            // Viewを探す
             TextView name = ButterKnife.findById(convertView, R.id.name);
             TextView message = ButterKnife.findById(convertView, R.id.message);
+            ImageView image = ButterKnife.findById(convertView, R.id.image);
 
-            // 名前とメッセージを設定
+            // 値を設定
             name.setText(item.getName());
             message.setText(item.getMessage());
+            image.setImageBitmap(item.getImageAsBitmap());
 
             return convertView;
         }
