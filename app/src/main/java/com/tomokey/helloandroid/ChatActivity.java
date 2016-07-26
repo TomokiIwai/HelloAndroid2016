@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +19,7 @@ import com.annimon.stream.Stream;
 import com.tomokey.helloandroid.dto.Message;
 import com.tomokey.helloandroid.dto.MessageSentResult;
 import com.tomokey.helloandroid.service.HelloAndroidService;
+import com.tomokey.helloandroid.service.NativeHelloAndroidService;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -131,18 +132,22 @@ public class ChatActivity extends AppCompatActivity {
      */
     @OnClick(R.id.send_button)
     public void onClickSendButton() {
-        // 入力テキストが空の場合
-        if (TextUtils.isEmpty(inputText.getText())) {
-            // Toastで「メッセージを入力してください」と表示して終了
-            Toast.makeText(this, R.string.plz_input_msg, Toast.LENGTH_SHORT).show();
-            return;
-        }
+//        // 入力テキストが空の場合
+//        if (TextUtils.isEmpty(inputText.getText())) {
+//            // Toastで「メッセージを入力してください」と表示して終了
+//            Toast.makeText(this, R.string.plz_input_msg, Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+//
+//        // メッセージ送信APIを呼び出す
+//        new HelloAndroidService().sendMessage(mName, inputText.getText().toString());
+//
+//        // 入力テキストをクリアしておく
+//        inputText.setText("");
 
-        // メッセージ送信APIを呼び出す
-        new HelloAndroidService().sendMessage(mName, inputText.getText().toString());
+        String result = new NativeHelloAndroidService().listMessage();
 
-        // 入力テキストをクリアしておく
-        inputText.setText("");
+        Log.v("AndroidTest", result);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
